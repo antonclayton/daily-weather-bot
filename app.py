@@ -39,6 +39,7 @@ hourly_weather_df = generate_hourly_df(open_mateo_response)
 # add hours column to df
 hourly_weather_df['date'] = pd.to_datetime(hourly_weather_df['date']).dt.tz_convert('America/Los_Angeles')  # convert to PST time zone
 hourly_weather_df['hour'] = hourly_weather_df['date'].dt.hour
+hourly_weather_df = hourly_weather_df[hourly_weather_df['hour'] >= 6]
 
 
 

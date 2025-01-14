@@ -27,7 +27,7 @@ def create_temperature_plot(hourly_weather_df):
     hourly_weather_df['point_color'] = hourly_weather_df['precipitation'].apply(get_precipitation_color)
 
     sns.set_theme(style="whitegrid")
-    fig, ax = plt.subplots(figsize=(10,6))
+    fig, ax = plt.subplots(figsize=(8,6))
     sns.lineplot(
         x='hour',
         y='temperature_2m',
@@ -59,7 +59,7 @@ def create_temperature_plot(hourly_weather_df):
     ax.set_xlabel("Hour of Day", fontsize=13, fontweight='bold', labelpad=15)
     ax.set_ylabel("Temperature (°F)", fontsize=13, fontweight='bold', labelpad=10)
 
-    ax.set_xticks(range(0, 25, 2))
+    ax.set_xticks(range(6, 25, 2))
     # Set y-axis limits
     ax.set_ylim(25, 110)
     ax.tick_params(axis='both', labelsize=12)
