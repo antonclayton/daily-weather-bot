@@ -16,7 +16,7 @@ def create_weather_message(user_id, daily_weather_df, NAME):
     # daily_sunset = daily_weather_df.loc[0,'sunset']
 
     daily_UV_index = round(daily_weather_df.loc[0,'uv_index_max'],1)
-    print(daily_UV_index)
+    # print(daily_UV_index)
 
     if (daily_UV_index < 3):
         UV_index_string = f"{daily_UV_index:.1f} - Low Risk"

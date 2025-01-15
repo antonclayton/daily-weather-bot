@@ -5,27 +5,40 @@ import pandas as pd
 from retry_requests import retry
 
 def get_weather_data(LATITUDE, LONGITUDE):
-    # Setup the Open-Meteo API client with cache and retry on error
-    cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
-    retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
-    openmeteo = openmeteo_requests.Client(session = retry_session)
+    try:
+        # Setup the Open-Meteo API client with cache and retry on error
+        cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
+        retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
+        openmeteo = openmeteo_requests.Client(session = retry_session)
 
-    # The order of variables in hourly or daily is important to assign them correctly below
-    url = "https://api.open-meteo.com/v1/forecast"
-    params = {
-        "latitude": LATITUDE,
-        "longitude": LONGITUDE,
-        "hourly": ["temperature_2m", "precipitation"],
-        "daily": ["temperature_2m_max", "temperature_2m_min", "sunrise", "sunset", "daylight_duration", "uv_index_max", "precipitation_hours", "precipitation_probability_max"],
-        "temperature_unit": "fahrenheit",
-        "wind_speed_unit": "mph",
-        "precipitation_unit": "inch",
-        "timezone": "America/Los_Angeles",
-        "forecast_days": 1
-    }
-    responses = openmeteo.weather_api(url, params=params)
-    response = responses[0]
-    return response
+        # Validate input parameters
+        if not isinstance(LATITUDE, (int, float)) or not isinstance(LONGITUDE, (int, float)):
+            raise ValueError("Latitude and longitude must be numeric values")
+
+        # The order of variables in hourly or daily is important to assign them correctly below
+        url = "https://api.open-meteo.com/v1/forecast"
+        params = {
+            "latitude": LATITUDE,
+            "longitude": LONGITUDE,
+            "hourly": ["temperature_2m", "precipitation"],
+            "daily": ["temperature_2m_max", "temperature_2m_min", "sunrise", "sunset", "daylight_duration", "uv_index_max", "precipitation_hours", "precipitation_probability_max"],
+            "temperature_unit": "fahrenheit",
+            "wind_speed_unit": "mph",
+            "timezone": "America/Los_Angeles",
+            "forecast_days": 1
+        }
+        responses = openmeteo.weather_api(url, params=params)
+        if not responses:
+            raise ValueError("No data received from Open Mateo API")
+        
+        response = responses[0]
+        return response
+    except ValueError as e:
+        print(f"Validation Error: {str(e)}")
+        raise
+    except Exception as e:
+        print(f"Unexpected error in get_weather_data: {str(e)}")
+        raise
 
 def generate_hourly_df(response):
     hourly = response.Hourly()

@@ -43,13 +43,12 @@ async def on_ready():
     await client.close()
 
 # authenticates bot with discord, allowing it to function
-def start_bot(user_id, message, hourly_df, daily_df):
+def start_bot(user_id, message, hourly_df):
     # declare variables as global to pass them to on_ready function
     global USER_ID, weather_message, hourly_weather_df
 
     USER_ID = user_id
     weather_message = message
     hourly_weather_df = hourly_df
-    daily_weather_df = daily_df
 
     client.run(BOT_TOKEN)
