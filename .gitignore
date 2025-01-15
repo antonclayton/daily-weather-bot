@@ -7,3 +7,6 @@ __pycache__/
 
 # might be needed?
 .cache.sqlite
+
+# hide log statements
+weather_app.log

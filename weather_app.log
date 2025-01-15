@@ -1,29 +1,6 @@
-2025-01-15 13:28:28,596 - INFO - Starting weather update application...
-2025-01-15 13:28:29,031 - ERROR - Main process failed: 'module' object is not callable
-2025-01-15 13:31:50,116 - INFO - Starting weather update application...
-2025-01-15 13:31:50,533 - ERROR - Main process failed: 'module' object is not callable
-2025-01-15 13:31:57,038 - INFO - Starting weather update application...
-2025-01-15 13:31:57,213 - WARNING - PyNaCl is not installed, voice will NOT be supported
-2025-01-15 13:31:57,517 - INFO - logging in using static token
-2025-01-15 13:31:58,594 - INFO - Shard ID None has connected to Gateway (Session ID: 6e07000b238850d03e832466a088f12f).
-2025-01-15 13:32:00,614 - INFO - Logged in as weather-bot#1485
-2025-01-15 13:32:01,580 - INFO - Weather message and plot sent successfully
-2025-01-15 13:36:38,956 - INFO - Starting weather update application...
-2025-01-15 13:36:39,158 - WARNING - PyNaCl is not installed, voice will NOT be supported
-2025-01-15 13:36:39,372 - INFO - logging in using static token
-2025-01-15 13:36:40,478 - INFO - Shard ID None has connected to Gateway (Session ID: 559e1c489e40c35baff5e05ca932960a).
-2025-01-15 13:36:42,489 - INFO - Logged in as weather-bot#1485
-2025-01-15 13:36:43,505 - INFO - Weather message and plot sent successfully
-2025-01-15 13:36:43,506 - INFO - end of program in function
-2025-01-15 13:36:43,510 - INFO - end of program
-2025-01-15 13:39:08,539 - INFO - Starting weather update application...
-2025-01-15 13:39:08,997 - ERROR - Main process failed: a coroutine was expected, got <function dummy_coroutine at 0x00000191D9B59620>
-2025-01-15 13:39:22,593 - INFO - Starting weather update application...
-2025-01-15 13:39:22,772 - INFO - Dummy coroutine running...
-2025-01-15 13:39:23,779 - INFO - Dummy coroutine finished.
-2025-01-15 13:40:59,682 - INFO - Starting weather update application...
-2025-01-15 13:40:59,862 - WARNING - PyNaCl is not installed, voice will NOT be supported
-2025-01-15 13:41:00,114 - INFO - logging in using static token
-2025-01-15 13:41:01,161 - INFO - Shard ID None has connected to Gateway (Session ID: 452028a792ebdab608b9654181fc9c54).
-2025-01-15 13:41:03,175 - INFO - Logged in as weather-bot#1485
-2025-01-15 13:41:03,902 - INFO - Weather message and plot sent successfully
+2025-01-15 15:09:41,355 - INFO - Starting weather update application...
+2025-01-15 15:09:41,637 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-01-15 15:09:41,999 - INFO - logging in using static token
+2025-01-15 15:09:46,127 - INFO - Shard ID None has connected to Gateway (Session ID: db0b819b1517c8179cecbe4234297e73).
+2025-01-15 15:09:48,137 - INFO - Logged in as weather-bot#1485
+2025-01-15 15:09:49,111 - INFO - Weather message and plot sent successfully
